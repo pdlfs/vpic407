@@ -30,6 +30,9 @@ elif [ $(hostname | grep ga-fe) ]; then
 elif [ $(hostname | grep narwhal) ] && [ `which mpirun.mpich` ]; then
     echo "Preparing machine.conf for Narwhal (MPICH)"
     cp $src_dir/narwhal-mpich.conf $src_dir/machine.conf
+elif [ $(hostname | grep narwhal) ] && [ `which mpiexec.hydra` ]; then
+    echo "Preparing machine.conf for Narwhal (MPICH)"
+    cp $src_dir/narwhal-mpich.conf $src_dir/machine.conf
 elif [ $(hostname | grep narwhal) ]; then
     echo "Preparing machine.conf for Narwhal (OpenMPI)"
     cp $src_dir/narwhal-openmpi.conf $src_dir/machine.conf
